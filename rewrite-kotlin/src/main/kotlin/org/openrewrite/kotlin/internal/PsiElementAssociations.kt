@@ -377,6 +377,7 @@ class PsiElementAssociations(val typeMapping: KotlinTypeMapping, val file: FirFi
                     is FirFunctionCall -> when (selector.calleeReference?.resolved?.resolvedSymbol) {
                         is FirConstructorSymbol -> ExpressionType.CONSTRUCTOR
                         is FirNamedFunctionSymbol -> ExpressionType.METHOD_INVOCATION
+                        is FirAnonymousFunctionSymbol -> ExpressionType.METHOD_INVOCATION
                         else -> null
                     }
 
